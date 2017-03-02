@@ -1,0 +1,56 @@
+body {
+    padding: 20px;
+}
+td {
+    font-size: 0.75em;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+td * {
+    width: 100%;
+}
+.col-u {
+    width: 15%;
+}
+.col-v {
+    width: 5%;
+}
+.col-c {
+    width: 10%;
+}
+.col-t {
+    width: 30%;
+}
+.form-control {
+    font-size: 1em;
+    height: 1.5em;
+    margin: 0 !important;
+    padding: 10px 0 !important;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.form-group {
+    margin: 0 !important;
+}
+.num {
+    text-align: right;
+    font-family: Courier, monospace;
+}
+.na {
+    background: #eee;
+}
+.ctr {
+    background: LightBlue;
+}
+.tgt {
+    background: LightPink;
+}
+.btn-reset {
+    margin-bottom: 10px;
+}
