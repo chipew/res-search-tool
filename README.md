@@ -2,7 +2,7 @@
 Unofficial Reddit Harassment Registry Search Tool
 
 ## Background
-ShareBlue (Correct The Record) has alledgedly created software to stalk, harass, and cyberbully users on Reddit.
+ShareBlue (Correct The Record) has allegedly created software to stalk, harass, and cyberbully users on Reddit.
 
 The criteria to be added to their [RES](https://redditenhancementsuite.com) database is unknown, but a partial leak of their list is now available [here](https://paste.ee/p/PoQRk).
 
