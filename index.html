@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>MAGA - ShariaBlue Search Tool - Reddit Harassment Registry</title>
+</head>
+<body>
+	<div class="page-header">
+  		<h1>ShariaBlue "CTR 2.0" Reddit Harassment Registry</h1>
+	</div>
+
+	<div>
+		<h3>Background</h3>
+		<div>
+			<ul>
+				<li>
+					Original <a href="http://redditenhancementsuite.com/" target="_blank">RES</a> List advocating for harassment and brigading (February 13, 2017):
+					<a href="https://paste.ee/p/PoQRk" target="_blank">Paste.ee</a>,
+					<a href="https://www.reddit.com/r/The_Donald/comments/5ws2l7/repost_because_it_got_removed_for_no_reason/" target="_blank">Reddit</a>,
+					<a href="http://pastebin.com/wvF2LsXA" target="_blank">Pastebin</a>
+				</li>
+				<li>
+					Background on Correct the Record and ShareBlue (CTR 2.0):
+					<a href="https://www.reddit.com/r/SandersForPresident/comments/4fupos/paid_digital_astroturfing_effort_by_correct_the/" target="_blank">Reddit</a>,
+					<a href="https://www.reddit.com/r/The_Donald/comments/5qx9yf/ctr_has_been_revived_and_renamed_to_shareblue/" target="_blank">Reddit</a>,
+					<a href="http://disobedientmedia.com/democrat-propaganda-group-shareblue-has-ties-to-chinese-government-host-of-foreign-special-interests/" target="_blank">Article</a>,
+					<a href="http://projectveritasaction.com/video/veritas-voter-fraud-compilation-voterfraudisreal" target="_blank">Video</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div ng-app="searchApp" ng-controller="mainController as ctrl">
+		<h3 id="search">Search</h3>
+		<div>
+			<p>Showing {{limitedUsers.length}} of {{ctrl.filteredUsers.length}} results ({{ctrl.users.length}} total).</p>
+		</div>
+		<div>
+			<button ng-click="ctrl.resetSearch()" class="btn btn-default btn-reset pull-right">Reset Search</button>
+			Filters:
+			<div class="btn-group">
+				<label class="btn btn-success" ng-model="ctrl.showVotes.na" ng-click="ctrl.filterUsers()" uib-btn-checkbox>Votes NA</label>
+				<label class="btn btn-success" ng-model="ctrl.showVotes.pos" ng-click="ctrl.filterUsers()" uib-btn-checkbox>Votes &gt; 0</label>
+				<label class="btn btn-success" ng-model="ctrl.showVotes.zero" ng-click="ctrl.filterUsers()" uib-btn-checkbox>Votes = 0</label>
+				<label class="btn btn-success" ng-model="ctrl.showVotes.neg" ng-click="ctrl.filterUsers()" uib-btn-checkbox>Votes &lt; 0</label>
+			</div>
+			<div class="btn-group">
+				<label class="btn btn-warning" ng-model="ctrl.showColors.na" ng-click="ctrl.filterUsers()" uib-btn-checkbox>Show Colorless</label>
+				<label class="btn btn-warning" ng-model="ctrl.showColors.fuchsia" ng-click="ctrl.filterUsers()" uib-btn-checkbox>Show Fuchsia</label>
+				<label class="btn btn-warning" ng-model="ctrl.showColors.red" ng-click="ctrl.filterUsers()" uib-btn-checkbox>Show Red</label>
+			</div>
+		</div>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td class="col-u">
+						<a href="#" ng-click="ctrl.sortType = 'u'; ctrl.sortDirection = !ctrl.sortDirection; ctrl.updateSortDirection()">
+						Username
+						<span ng-show="ctrl.sortType == 'u' && !ctrl.sortDirection">▼</span>
+						<span ng-show="ctrl.sortType == 'u' && ctrl.sortDirection">▲</span>
+						</a>
+						<form>
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" id="search-users" class="form-control sm" placeholder="Search Users" ng-change="ctrl.filterUsers()" ng-model="ctrl.searchUsers" ng-model-options="{ debounce: 200 }"
+									autofocus>
+								</div>
+							</div>
+						</form>
+					</td>
+					<td class="col-v">
+						<a href="#" ng-click="ctrl.sortType = 'v'; ctrl.sortDirection = !ctrl.sortDirection; ctrl.updateSortDirection()">
+						Votes
+						<span ng-show="ctrl.sortType == 'v' && !ctrl.sortDirection">▼</span>
+						<span ng-show="ctrl.sortType == 'v' && ctrl.sortDirection">▲</span>
+						</a>
+					</td>
+					<td class="col-c">
+						<a href="#" ng-click="ctrl.sortType = 'c'; ctrl.sortDirection = !ctrl.sortDirection; ctrl.updateSortDirection()">
+						Color
+						<span ng-show="ctrl.sortType == 'c' && !ctrl.sortDirection">▼</span>
+						<span ng-show="ctrl.sortType == 'c' && ctrl.sortDirection">▲</span>
+						</a>
+						<form>
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" class="form-control sm" placeholder="Search Colors" ng-change="ctrl.filterUsers()" ng-model="ctrl.searchColors" ng-model-options="{ debounce: 200 }"
+									autofocus>
+								</div>
+							</div>
+						</form>
+					</td>
+					<td class="col-t">
+						<a href="#" ng-click="ctrl.sortType = 't'; ctrl.sortDirection = !ctrl.sortDirection; ctrl.updateSortDirection()">
+						Tag
+						<span ng-show="ctrl.sortType == 't' && !ctrl.sortDirection">▼</span>
+						<span ng-show="ctrl.sortType == 't' && ctrl.sortDirection">▲</span>
+						</a>
+						<form>
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" class="form-control sm" placeholder="Search Tags" ng-change="ctrl.filterUsers()" ng-model="ctrl.searchTags" ng-model-options="{ debounce: 200 }"
+									autofocus>
+								</div>
+							</div>
+						</form>
+					</td>
+					<td class="col-l">
+						<a href="#" ng-click="ctrl.sortType = 'l'; ctrl.sortDirection = !ctrl.sortDirection; ctrl.updateSortDirection()">
+						Link
+						<span ng-show="ctrl.sortType == 'l' && !ctrl.sortDirection">▼</span>
+						<span ng-show="ctrl.sortType == 'l' && ctrl.sortDirection">▲</span>
+						</a>
+						<form>
+							<div class="form-group">
+								<div class="input-group">
+									<input type="text" class="form-control sm" placeholder="Search Links" ng-change="ctrl.filterUsers()" ng-model="ctrl.searchLinks" ng-model-options="{ debounce: 200 }"
+									autofocus>
+								</div>
+							</div>
+						</form>
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in ctrl.filteredUsers | limitTo: 100 as limitedUsers">
+					<td ng-class="{ctr:user.v>0, tgt:user.v<0}"><a href="https://www.reddit.com/u/{{ user.u }}">{{ user.u }}</a></td>
+					<td ng-class="{na:user.v===undefined, ctr:user.v>0, tgt:user.v<0}" class="num">{{ user.v.toString() || 'na' }}</td>
+					<td ng-class="{na:!user.c}" style="background: {{user.c}}">{{ user.c }}</td>
+					<td ng-class="{na:!user.t}">{{ user.t }}</td>
+					<td ng-class="{na:!user.l}"><a ng-if="user.l" href="https://www.reddit.com{{ user.l }}">{{ user.l }}</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="footer">
+		<center>Site updated on March 2, 2017. MAGA.</center>
+	</div>
+
+	<link rel="stylesheet" href="https://unpkg.com/bootswatch@3.3.7/united/bootstrap.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/angular-ui-bootstrap@2.5.0/dist/ui-bootstrap-csp.css">
+
+	<script src="https://unpkg.com/angular@1.5.11/angular.min.js"></script>
+	<script src="https://unpkg.com/angular-filter@0.5.15/dist/angular-filter.min.js"></script>
+	<script src="https://unpkg.com/angular-ui-bootstrap@2.5.0/dist/ui-bootstrap.js"></script>
+
+	<link rel="stylesheet" href="css.css">
+	<script src="app.js"></script>
+</body>
+</html>
