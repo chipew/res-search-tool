@@ -18,10 +18,16 @@ td * {
     width: 5%;
 }
 .col-c {
-    width: 10%;
+    width: 9%;
 }
 .col-t {
-    width: 30%;
+    width: 36%;
+}
+.col-l {
+	width: 30%;
+}
+.col-s {
+	width: 5%;
 }
 .form-control {
     font-size: 1em;
@@ -43,7 +49,7 @@ td * {
     font-family: Courier, monospace;
 }
 .na {
-    background: #eee;
+    background: #ddd;
 }
 .ctr {
     background: LightBlue;
