@@ -7,13 +7,13 @@
 </head>
 <body>
 	<div class="page-header">
-		<small class="pull-right">Site updated on March 4, 2017.</small>
+		<small class="pull-right">Site updated on March 8, 2017.</small>
   		<h1>ShariaBlue "CTR 2.0" Reddit Harassment Registry</h1>
 	</div>
 
 	<div>
 		<h3>Background</h3>
-		<p>Shareblue (<a href="https://www.reddit.com/r/SandersForPresident/comments/4fupos/paid_digital_astroturfing_effort_by_correct_the/" target="_blank">Correct The Record</a>) has allegedly created software to stalk, harass, and cyberbully users on Reddit. The criteria to be added to their <a href="https://redditenhancementsuite.com" target="_blank">RES</a> database is unknown, but several <a href="#leaks">leaks</a> of their list(s) have been recently discovered online.</p>
+		<p>Shareblue (<a href="https://np.reddit.com/r/SandersForPresident/comments/4fupos/paid_digital_astroturfing_effort_by_correct_the/" target="_blank">Correct The Record</a>) has allegedly created software to stalk, harass, and cyberbully users on Reddit. The criteria to be added to their <a href="https://redditenhancementsuite.com" target="_blank">RES</a> database is unknown, but several <a href="#leaks">leaks</a> of their list(s) have been recently discovered online.</p>
 		<p>For more information about this project: <a href="https://github.com/chipew/res-search-tool/blob/master/README.md">README</a></p>
 	</div>
 
@@ -116,11 +116,11 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="user in ctrl.filteredUsers | limitTo: 100 as limitedUsers">
-					<td ng-class="{ctr:user.v>0, tgt:user.v<0}"><a href="https://reddit.com/u/{{ user.u }}">{{ user.u }}</a></td>
+					<td ng-class="{ctr:user.v>0, tgt:user.v<0}"><a href="https://np.reddit.com/u/{{ user.u }}">{{ user.u }}</a></td>
 					<td ng-class="{na:user.v===undefined, ctr:user.v>0, tgt:user.v<0}" class="num">{{ user.v.toString() }}</td>
 					<td ng-class="{na:!user.c}" style="background: {{user.c}}">{{ user.c }}</td>
 					<td ng-class="{na:!user.t}">{{ user.t }}</td>
-					<td ng-class="{na:!user.l}"><a ng-if="user.l" href="https://reddit.com{{ user.l }}">{{ user.l }}</a></td>
+					<td ng-class="{na:!user.l}"><a ng-if="user.l" href="https://np.reddit.com{{ user.l }}">{{ user.l }}</a></td>
 					<td>{{ user.s }}</td>
 				</tr>
 			</tbody>
