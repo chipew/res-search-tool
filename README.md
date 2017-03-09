@@ -14,12 +14,12 @@ The criteria to be added to their [RES](https://redditenhancementsuite.com) data
 6. https://pastebin.com/pxFrZaPu, 01-02-17
 
 For more information, please join the discussions on Reddit:
-- https://www.reddit.com/r/SandersForPresident/comments/4fupos/paid_digital_astroturfing_effort_by_correct_the
-- https://www.reddit.com/r/The_Donald/comments/5qx9yf/ctr_has_been_revived_and_renamed_to_shareblue
-- https://www.reddit.com/r/The_Donald/comments/5ws2l7/repost_because_it_got_removed_for_no_reason
-- https://www.reddit.com/r/The_Donald/comments/5wqgoc/shariablue_has_a_list_of_the_donald_users_to_tag
-- https://www.reddit.com/r/The_Donald/comments/5wtbce/found_another_list_that_shariablue_is_using_to
-- https://www.reddit.com/r/The_Donald/comments/5ws63j/hi_shareblue_you_seem_to_want_to_get_to_know_me
+- https://np.reddit.com/r/SandersForPresident/comments/4fupos/paid_digital_astroturfing_effort_by_correct_the
+- https://np.reddit.com/r/The_Donald/comments/5qx9yf/ctr_has_been_revived_and_renamed_to_shareblue
+- https://np.reddit.com/r/The_Donald/comments/5ws2l7/repost_because_it_got_removed_for_no_reason
+- https://np.reddit.com/r/The_Donald/comments/5wqgoc/shariablue_has_a_list_of_the_donald_users_to_tag
+- https://np.reddit.com/r/The_Donald/comments/5wtbce/found_another_list_that_shariablue_is_using_to
+- https://np.reddit.com/r/The_Donald/comments/5ws63j/hi_shareblue_you_seem_to_want_to_get_to_know_me
 
 ## Usage
 Use this [search tool](https://chipew.github.io/res-search-tool/#search) to see if you are being targeted or supported.
